@@ -11,6 +11,8 @@ export class CadastroFilmesComponent implements OnInit {
 
   cadastro: FormGroup;
 
+  generos: Array<string>;
+
   constructor(public validacao: ValidarCamposService, private fb: FormBuilder) { }
 
   get f() {
@@ -27,6 +29,8 @@ export class CadastroFilmesComponent implements OnInit {
       urlIMDb: ['', [Validators.minLength(10)]],
       genero: ['', [Validators.required]]
     });
+    this.generos = ['Ação', 'Romance', 'Aventura', 'Terror', 'Ficção Científica', 'Comédia', 'Drama'];
+
   }
 
   salvar(): void {
