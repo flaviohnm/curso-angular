@@ -1,6 +1,10 @@
-import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material';
+
+import { Alerta } from './../../shared/models/alerta';
 import { Filme } from 'src/app/shared/models/filme';
+import { AlertaComponent } from './../../shared/components/alerta/alerta.components';
 import { FilmesService } from './../../core/filmes.service';
 import { ValidarCamposService } from './../../shared/components/campos/validar-campos.service';
 
@@ -16,6 +20,7 @@ export class CadastroFilmesComponent implements OnInit {
   generos: Array<string>;
 
   constructor(public validacao: ValidarCamposService,
+    public dialog: MatDialog,
     private fb: FormBuilder,
     private filmesService: FilmesService) { }
 
@@ -33,7 +38,16 @@ export class CadastroFilmesComponent implements OnInit {
       urlIMDb: ['', [Validators.minLength(10)]],
       genero: ['', [Validators.required]]
     });
-    this.generos = ['Ação', 'Romance', 'Aventura', 'Terror', 'Ficção Científica', 'Comédia', 'Drama','Seriado'];
+    this.generos = [
+                    'Ação',
+                    'Romance',
+                    'Aventura',
+                    'Terror',
+                    'Ficção Científica',
+                    'Comédia',
+                    'Drama',
+                    'Seriado'
+                  ];
   }
 
   submit(): void {
@@ -51,10 +65,19 @@ export class CadastroFilmesComponent implements OnInit {
 
   private salvar(filme: Filme): void {
     this.filmesService.salvar(filme).subscribe(() => {
-      alert('SUCESSO');
+      const config = {
+        data: {
+          btnSucesso: 'Ir para a Listagem',
+          btnCancelar: 'Cadastrar novo Filme',
+          corBtnCancelar: 'primrary'
+          possuirBtnFechar: true,
+        } as Alerta
+      };
+      const DialogRef = this.dialog.open(AlertaComponent, config);
     },
       () => {
         alert('ERRO AO SALVAR');
       });
   }
+
 }
