@@ -1,6 +1,8 @@
-import { ValidarCamposService } from './../../shared/components/campos/validar-campos.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Filme } from 'src/app/shared/models/filme';
+import { FilmesService } from './../../core/filmes.service';
+import { ValidarCamposService } from './../../shared/components/campos/validar-campos.service';
 
 @Component({
   selector: 'dio-cadastro-filmes',
@@ -13,7 +15,9 @@ export class CadastroFilmesComponent implements OnInit {
 
   generos: Array<string>;
 
-  constructor(public validacao: ValidarCamposService, private fb: FormBuilder) { }
+  constructor(public validacao: ValidarCamposService,
+    private fb: FormBuilder,
+    private filmesService: FilmesService) { }
 
   get f() {
     return this.cadastro.controls;
@@ -21,7 +25,7 @@ export class CadastroFilmesComponent implements OnInit {
 
   ngOnInit() {
     this.cadastro = this.fb.group({
-      titulo: ['', [Validators.required,Validators.minLength(2), Validators.maxLength(256)]],
+      titulo: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(256)]],
       urlFoto: ['', [Validators.minLength(10)]],
       dtLancamento: ['', [Validators.required]],
       descricao: [''],
@@ -29,19 +33,28 @@ export class CadastroFilmesComponent implements OnInit {
       urlIMDb: ['', [Validators.minLength(10)]],
       genero: ['', [Validators.required]]
     });
-    this.generos = ['Ação', 'Romance', 'Aventura', 'Terror', 'Ficção Científica', 'Comédia', 'Drama'];
-
+    this.generos = ['Ação', 'Romance', 'Aventura', 'Terror', 'Ficção Científica', 'Comédia', 'Drama','Seriado'];
   }
 
-  salvar(): void {
+  submit(): void {
     this.cadastro.markAllAsTouched();
-    if(this.cadastro.invalid){
+    if (this.cadastro.invalid) {
       return;
     }
-    alert('SUCESSO!!\n\n' + JSON.stringify(this.cadastro.value, null, 4));
+    const filme = this.cadastro.getRawValue() as Filme;
+    this.salvar(filme);
   }
 
   reiniciarForm(): void {
     this.cadastro.reset();
+  }
+
+  private salvar(filme: Filme): void {
+    this.filmesService.salvar(filme).subscribe(() => {
+      alert('SUCESSO');
+    },
+      () => {
+        alert('ERRO AO SALVAR');
+      });
   }
 }
