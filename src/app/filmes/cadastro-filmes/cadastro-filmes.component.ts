@@ -69,8 +69,8 @@ export class CadastroFilmesComponent implements OnInit {
         data: {
           btnSucesso: 'Ir para a Listagem',
           btnCancelar: 'Cadastrar novo Filme',
-          corBtnCancelar: 'primrary'
-          possuirBtnFechar: true,
+          corBtnCancelar: 'primrary',
+          possuirBtnFechar: true
         } as Alerta
       };
       const DialogRef = this.dialog.open(AlertaComponent, config);
