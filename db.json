@@ -189,6 +189,26 @@
       "urlIMDb": "",
       "genero": "Comédia",
       "id": 19
+    },
+    {
+      "titulo": "De Volta para o Futuro",
+      "urlFoto": "https://m.media-amazon.com/images/M/MV5BZmU0M2Y1OGUtZjIxNi00ZjBkLTg1MjgtOWIyNThiZWIwYjRiXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_UX182_CR0,0,182,268_AL_.jpg",
+      "dtLancamento": "1985-12-25T02:00:00.000Z",
+      "descricao": "Marty McFly, a 17-year-old high school student, is accidentally sent thirty years into the past in a time-traveling DeLorean invented by his close friend, the eccentric scientist Doc Brown.",
+      "nota": 8.5,
+      "urlIMDb": "https://www.imdb.com/title/tt0088763/?ref_=ttls_li_tt",
+      "genero": "Ficção Científica",
+      "id": 20
+    },
+    {
+      "titulo": "De Volta para o Futuro II ",
+      "urlFoto": "https://m.media-amazon.com/images/M/MV5BZTMxMGM5MjItNDJhNy00MWI2LWJlZWMtOWFhMjI5ZTQwMWM3XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_UX182_CR0,0,182,268_AL_.jpg",
+      "dtLancamento": "1989-12-14T02:00:00.000Z",
+      "descricao": "Depois de visitar 2015, Marty McFly retorna a 1955 para evitar as mudanças desastrosas de 1985, sem interferir na sua primeira viagem.",
+      "nota": 7.8,
+      "urlIMDb": "https://www.imdb.com/title/tt0096874/?ref_=ttls_li_tt",
+      "genero": "Ficção Científica",
+      "id": 21
     }
   ]
 }
