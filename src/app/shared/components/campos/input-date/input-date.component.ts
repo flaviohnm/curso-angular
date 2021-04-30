@@ -5,7 +5,7 @@ import { ValidarCamposService } from '../validar-campos.service';
 @Component({
   selector: 'dio-input-date',
   templateUrl: './input-date.component.html',
-  styleUrls: ['./input-date.component.scss']
+  styleUrls: ['./input-date.component.css']
 })
 export class InputDateComponent {
 

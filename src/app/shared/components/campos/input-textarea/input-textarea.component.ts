@@ -1,11 +1,11 @@
 import { Component, Input } from '@angular/core';
-import { AbstractControl, FormGroup } from '@angular/forms';
+import { FormGroup, AbstractControl } from '@angular/forms';
 import { ValidarCamposService } from '../validar-campos.service';
 
 @Component({
   selector: 'dio-input-textarea',
   templateUrl: './input-textarea.component.html',
-  styleUrls: ['./input-textarea.component.scss']
+  styleUrls: ['./input-textarea.component.css']
 })
 export class InputTextareaComponent {
 

@@ -5,7 +5,7 @@ import { ValidarCamposService } from '../validar-campos.service';
 @Component({
   selector: 'dio-input-select',
   templateUrl: './input-select.component.html',
-  styleUrls: ['./input-select.component.scss']
+  styleUrls: ['./input-select.component.css']
 })
 export class InputSelectComponent {
 
@@ -19,5 +19,4 @@ export class InputSelectComponent {
   get formControl(): AbstractControl {
     return this.formGroup.controls[this.controlName];
   }
-
 }

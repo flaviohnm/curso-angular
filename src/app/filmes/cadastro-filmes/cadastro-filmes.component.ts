@@ -1,13 +1,12 @@
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-
-import { Alerta } from './../../shared/models/alerta';
+import { ValidarCamposService } from 'src/app/shared/components/campos/validar-campos.service';
 import { Filme } from 'src/app/shared/models/filme';
-import { AlertaComponent } from './../../shared/components/alerta/alerta.components';
-import { FilmesService } from './../../core/filmes.service';
-import { ValidarCamposService } from './../../shared/components/campos/validar-campos.service';
+import { FilmesService } from 'src/app/core/filmes.service';
+import { AlertaComponent } from 'src/app/shared/components/alerta/alerta.component';
+import { Alerta } from 'src/app/shared/models/alerta';
 
 @Component({
   selector: 'dio-cadastro-filmes',
@@ -17,20 +16,20 @@ import { ValidarCamposService } from './../../shared/components/campos/validar-c
 export class CadastroFilmesComponent implements OnInit {
 
   cadastro: FormGroup;
-
   generos: Array<string>;
 
   constructor(public validacao: ValidarCamposService,
-    public dialog: MatDialog,
-    private fb: FormBuilder,
-    private filmesService: FilmesService,
-    private router: Router) { }
+              public dialog: MatDialog,
+              private fb: FormBuilder,
+              private filmeService: FilmesService,
+              private router: Router) { }
 
   get f() {
     return this.cadastro.controls;
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
+
     this.cadastro = this.fb.group({
       titulo: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(256)]],
       urlFoto: ['', [Validators.minLength(10)]],
@@ -40,16 +39,9 @@ export class CadastroFilmesComponent implements OnInit {
       urlIMDb: ['', [Validators.minLength(10)]],
       genero: ['', [Validators.required]]
     });
-    this.generos = [
-      'Ação',
-      'Romance',
-      'Aventura',
-      'Terror',
-      'Ficção Científica',
-      'Comédia',
-      'Drama',
-      'Seriado'
-    ];
+
+    this.generos = ['Ação', 'Romance', 'Aventura', 'Terror', 'Ficção cientifica', 'Comédia', 'Aventura', 'Drama'];
+
   }
 
   submit(): void {
@@ -57,6 +49,7 @@ export class CadastroFilmesComponent implements OnInit {
     if (this.cadastro.invalid) {
       return;
     }
+
     const filme = this.cadastro.getRawValue() as Filme;
     this.salvar(filme);
   }
@@ -66,12 +59,12 @@ export class CadastroFilmesComponent implements OnInit {
   }
 
   private salvar(filme: Filme): void {
-    this.filmesService.salvar(filme).subscribe(() => {
+    this.filmeService.salvar(filme).subscribe(() => {
       const config = {
         data: {
-          btnSucesso: 'Ir para a Listagem',
-          btnCancelar: 'Cadastrar novo Filme',
-          corBtnCancelar: 'primrary',
+          btnSucesso: 'Ir para a listagem',
+          btnCancelar: 'Cadastrar um novo filme',
+          corBtnCancelar: 'primary',
           possuirBtnFechar: true
         } as Alerta
       };
@@ -82,19 +75,19 @@ export class CadastroFilmesComponent implements OnInit {
         } else {
           this.reiniciarForm();
         }
-      })
-    },
-      () => {
-        const config = {
-          data: {
-            titulo: 'Erro ao salvar registro!',
-            descricao: 'Não conseguimos salvar o seu registro, Favor tentar novamente mais tarde!!',
-            corBtnSucesso: 'warn',
-            btnSucesso: 'Fechar',
-          } as Alerta
-        };
-        this.dialog.open(AlertaComponent, config);
       });
+    },
+    () => {
+      const config = {
+        data: {
+          titulo: 'Erro ao salvar o registro!',
+          descricao: 'Não conseguimos salvar seu registro, favor tentar novamente mais tarde',
+          corBtnSucesso: 'warn',
+          btnSucesso: 'Fechar'
+        } as Alerta
+      };
+      this.dialog.open(AlertaComponent, config);
+    });
   }
 
 }

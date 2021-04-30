@@ -1,11 +1,11 @@
-import { ValidarCamposService } from './../validar-campos.service';
-import { FormGroup, AbstractControl } from '@angular/forms';
 import { Component, Input } from '@angular/core';
+import { FormGroup, AbstractControl } from '@angular/forms';
+import { ValidarCamposService } from '../validar-campos.service';
 
 @Component({
   selector: 'dio-input-text',
   templateUrl: './input-text.component.html',
-  styleUrls: ['./input-text.component.scss']
+  styleUrls: ['./input-text.component.css']
 })
 export class InputTextComponent {
 

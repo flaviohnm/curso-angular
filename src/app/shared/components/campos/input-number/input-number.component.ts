@@ -5,7 +5,7 @@ import { ValidarCamposService } from '../validar-campos.service';
 @Component({
   selector: 'dio-input-number',
   templateUrl: './input-number.component.html',
-  styleUrls: ['./input-number.component.scss']
+  styleUrls: ['./input-number.component.css']
 })
 export class InputNumberComponent {
 
@@ -21,6 +21,5 @@ export class InputNumberComponent {
   get formControl(): AbstractControl {
     return this.formGroup.controls[this.controlName];
   }
-
 
 }
