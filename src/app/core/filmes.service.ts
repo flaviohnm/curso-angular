@@ -17,4 +17,7 @@ export class FilmesService {
     return this.http.post<Filme>(url, filme);
   }
 
+  listar(): Observable<Filme[]> {
+    return this.http.get<Filme[]>(url);
+  }
 }
