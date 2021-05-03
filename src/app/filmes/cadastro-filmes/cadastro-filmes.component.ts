@@ -19,10 +19,10 @@ export class CadastroFilmesComponent implements OnInit {
   generos: Array<string>;
 
   constructor(public validacao: ValidarCamposService,
-              public dialog: MatDialog,
-              private fb: FormBuilder,
-              private filmeService: FilmesService,
-              private router: Router) { }
+    public dialog: MatDialog,
+    private fb: FormBuilder,
+    private filmeService: FilmesService,
+    private router: Router) { }
 
   get f() {
     return this.cadastro.controls;
@@ -40,7 +40,17 @@ export class CadastroFilmesComponent implements OnInit {
       genero: ['', [Validators.required]]
     });
 
-    this.generos = ['Ação', 'Romance', 'Aventura', 'Terror', 'Ficção cientifica', 'Comédia', 'Aventura', 'Drama'];
+    this.generos = [
+      'Ação',
+      'Romance',
+      'Aventura',
+      'Terror',
+      'Ficção cientifica',
+      'Comédia',
+      'Aventura',
+      'Drama',
+      'Seriado'
+    ];
 
   }
 
@@ -77,17 +87,17 @@ export class CadastroFilmesComponent implements OnInit {
         }
       });
     },
-    () => {
-      const config = {
-        data: {
-          titulo: 'Erro ao salvar o registro!',
-          descricao: 'Não conseguimos salvar seu registro, favor tentar novamente mais tarde',
-          corBtnSucesso: 'warn',
-          btnSucesso: 'Fechar'
-        } as Alerta
-      };
-      this.dialog.open(AlertaComponent, config);
-    });
+      () => {
+        const config = {
+          data: {
+            titulo: 'Erro ao salvar o registro!',
+            descricao: 'Não conseguimos salvar seu registro, favor tentar novamente mais tarde',
+            corBtnSucesso: 'warn',
+            btnSucesso: 'Fechar'
+          } as Alerta
+        };
+        this.dialog.open(AlertaComponent, config);
+      });
   }
 
 }
