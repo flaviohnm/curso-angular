@@ -3,7 +3,7 @@
 
 .primary {
   color: white;
-  height: 46px;
+  height: 80px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -16,6 +16,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  padding-bottom: 5px;
 }
 
 .rodape-icons {
@@ -23,6 +24,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
+  padding-bottom: 10px;
 }
 
 a,
