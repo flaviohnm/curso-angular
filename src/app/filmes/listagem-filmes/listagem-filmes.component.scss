@@ -10,6 +10,10 @@
   }
 }
 
+.filtro-listagem {
+  width: calc(100% - 50px);
+}
+
 .mat-card-image {
   width: 182px;
   height: 268px;
@@ -39,17 +43,4 @@
         width: calc(25% - 52px);
       }
     }
-  }
-
-
-  .filtro-listagem {
-
-    width: calc(100% - 50px);
-
-  }
-
-  .quebrar-linha {
-
-    white-space: pre-line;
-
   }

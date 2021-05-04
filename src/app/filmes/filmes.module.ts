@@ -19,6 +19,6 @@ import { VisualizarFilmesComponent } from './visualizar-filmes/visualizar-filmes
     CamposModule,
     InfiniteScrollModule
   ],
-  declarations: [CadastroFilmesComponent, ListagemFilmesComponent,VisualizarFilmesComponent]
+  declarations: [CadastroFilmesComponent, ListagemFilmesComponent, VisualizarFilmesComponent]
 })
 export class FilmesModule { }

@@ -1,6 +1,16 @@
 {
   "filmes": [
     {
+      "id": 1,
+      "titulo": "MIB: Homens de Preto",
+      "urlFoto": "https://m.media-amazon.com/images/M/MV5BOTlhYTVkMDktYzIyNC00NzlkLTlmN2ItOGEyMWQ4OTA2NDdmXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_UX182_CR0,0,182,268_AL_.jpg",
+      "dtLancamento": "1997-07-11T03:00:00.000Z",
+      "descricao": "A police officer joins a secret organization that polices and monitors extraterrestrial interactions on Earth.",
+      "nota": 7.3,
+      "urlIMDb": "https://www.imdb.com/title/tt0119654/",
+      "genero": "Ação"
+    },
+    {
       "id": 2,
       "titulo": "MIB: Homens de Preto II ",
       "urlFoto": "https://m.media-amazon.com/images/M/MV5BMTMxNDA0NTMxMV5BMl5BanBnXkFtZTYwMDE2NzY2._V1_UX182_CR0,0,182,268_AL_.jpg",
@@ -31,6 +41,16 @@
       "genero": "Ação"
     },
     {
+      "id": 5,
+      "titulo": "Coringa",
+      "urlFoto": "https://m.media-amazon.com/images/M/MV5BNGVjNWI4ZGUtNzE0MS00YTJmLWE0ZDctN2ZiYTk2YmI3NTYyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_UX182_CR0,0,182,268_AL_.jpg",
+      "dtLancamento": "2019-10-03T03:00:00.000Z",
+      "descricao": "In Gotham City, mentally troubled comedian Arthur Fleck is disregarded and mistreated by society. He then embarks on a downward spiral of revolution and bloody crime. This path brings him face-to-face with his alter-ego: the Joker.",
+      "nota": 8.7,
+      "urlIMDb": "https://www.imdb.com/title/tt7286456/",
+      "genero": "Drama"
+    },
+    {
       "id": 6,
       "titulo": "Vingadores: Ultimato",
       "urlFoto": "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_UX182_CR0,0,182,268_AL_.jpg",
@@ -49,6 +69,16 @@
       "nota": 6.9,
       "urlIMDb": "https://www.imdb.com/title/tt4154664/",
       "genero": "Ação"
+    },
+    {
+      "id": 8,
+      "titulo": "Shazam!",
+      "urlFoto": "https://m.media-amazon.com/images/M/MV5BYTE0Yjc1NzUtMjFjMC00Y2I3LTg3NGYtNGRlMGJhYThjMTJmXkEyXkFqcGdeQXVyNTI4MzE4MDU@._V1_UX182_CR0,0,182,268_AL_.jpg",
+      "dtLancamento": "2019-04-04T03:00:00.000Z",
+      "descricao": "A newly fostered young boy in search of his mother instead finds unexpected super powers and soon gains a powerful enemy.",
+      "nota": 7.1,
+      "urlIMDb": "https://www.imdb.com/title/tt0448115/",
+      "genero": "Comédia"
     },
     {
       "id": 9,
@@ -79,16 +109,6 @@
       "urlIMDb": "https://www.imdb.com/title/tt2527338/?ref_=vi_md_ti",
       "genero": "Aventura",
       "id": 11
-    },
-    {
-      "titulo": "Um Parto de Viagem",
-      "urlFoto": "https://m.media-amazon.com/images/M/MV5BMTU5MTgxODM3Nl5BMl5BanBnXkFtZTcwMjMxNDEwNA@@._V1_UX182_CR0,0,182,268_AL_.jpg",
-      "dtLancamento": "2010-11-05T03:00:00.000Z",
-      "descricao": "O ansioso pai Peter Highman é forçado a pegar uma carona com o aspirante a ator Ethan Tremblay em uma viagem para chegar ao nascimento de seu filho a tempo.",
-      "nota": 6.5,
-      "urlIMDb": "https://www.imdb.com/title/tt1231583/?ref_=ttls_li_tt",
-      "genero": "Comédia",
-      "id": 12
     }
   ]
 }
